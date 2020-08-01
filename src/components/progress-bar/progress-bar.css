@@ -1,0 +1,7 @@
+.progress-bar {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid maroon;
+  padding: 10px;
+}
+

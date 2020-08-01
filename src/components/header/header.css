@@ -1,0 +1,5 @@
+.header {
+  display: flex;
+  color: tomato;
+  border: 1px solid steelblue;
+}
