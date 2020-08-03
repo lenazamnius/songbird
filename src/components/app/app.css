@@ -1,4 +1,6 @@
-.my-app {
-  padding:  10px;
-  border: 1px solid lightcoral;
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-size: 15px;
 }

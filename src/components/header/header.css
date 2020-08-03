@@ -1,5 +1,10 @@
 .header {
   display: flex;
-  color: tomato;
-  border: 1px solid steelblue;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 100px;
+}
+
+.logo {
+  color: #3f51b5;
 }

@@ -1,17 +1,26 @@
 import React from 'react';
+import birdsData from '../../bird-data';
+
+import { Box,Paper }  from '@material-ui/core';
+
 
 import './progress-bar.css';
 
 const ProgressBar = () => {
+  const data = birdsData;
+
+  const barItems = data.map((item) => {
+    const { id, category } = item;
+
+    return (
+      <Box key={id} className='item'> { category } </Box>
+    );
+  });
+
   return (
-    <div className="progress-bar">
-      <div>first</div>
-      <div>second</div>
-      <div>third</div>
-      <div>fourth</div>
-      <div>fifth</div>
-      <div>sixth</div>
-    </div>
+    <Paper className='progress-bar'>
+      { barItems }
+    </Paper>
   );
 };
 

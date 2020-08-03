@@ -1,12 +1,12 @@
 import React from 'react';
-
+import { Button } from '@material-ui/core';
 import './btn-next.css';
 
 const BtnNext = () => {
   return (
-    <div className="btn-next">
-      <button type="button">Next Level</button>
-    </div>
+    <Button variant="contained" color="primary" className='btn'>
+      Next Level
+    </Button>
   );
 };
 

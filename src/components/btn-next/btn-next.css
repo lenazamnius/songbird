@@ -1,7 +1,12 @@
-.btn-next {
-  padding: 15px;
+.btn {
+  width: 100%;
 }
 
-.btn-next button {
-  width: 100%;
+.MuiButton-label{
+  padding: 5px;
+}
+
+.MuiButton-label {
+  text-transform: none;
+  font-size: 15px;
 }

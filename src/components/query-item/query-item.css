@@ -1,4 +1,8 @@
-.query-item {
-  display: flex;
-  border: 1px solid greenyellow;
+.player-wrapper {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.player {
+  width: 100%;
 }
