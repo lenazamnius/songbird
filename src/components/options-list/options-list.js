@@ -1,21 +1,47 @@
 import React from 'react';
-import birdsData from '../../bird-data';
-
-import { Box,Paper }  from '@material-ui/core';
+import { Box, Paper, makeStyles }  from '@material-ui/core';
+import clsx from 'clsx';
 
 import './options-list.css';
 
-const OptionsList = () => {
-  const data = birdsData[0].data;
+const useStyles = makeStyles((theme) => ({
+  optionDot: {
+    display: 'inline-block',
+    width: '10px',
+    height: '10px',
+    marginRight: '15px',
+    marginLeft: '10px',
+    borderRadius: '5px',
+  },
+  default: {
+    backgroundColor: '#3f51b5',
+  },
+  guessed: {
+    backgroundColor: '#4caf50',
+  },
+  notGuessed: {
+    backgroundColor: '#dc004e',
+  }
+}));
 
-  const barItems = data.map((item) => {
-    const { id, name } = item;
+const OptionsList = ({ curLevelData, handleClickOptionsListItem }) => {
+  const classes = useStyles();
+
+  const barItems = curLevelData.map((item, itemIndex) => {
+    const { id, name, clicked } = item;
 
     return (
-      <Box key={id} className='option'>
-        <Box component='span' className='option-dot'/>
+      <Box key={id} className='option' onClick={() => handleClickOptionsListItem(id, itemIndex)}>
+        <Box component='span' className={
+          clsx(
+            classes.optionDot, classes.default,
+            {
+              [classes.guessed]: clicked === 'guessed',
+              [classes.notGuessed]: clicked === 'notGuessed',
+            }
+          )}/>
         { name } 
-        </Box>
+      </Box>
     );
   });
 
@@ -27,21 +53,3 @@ const OptionsList = () => {
 };
 
 export default OptionsList;
-
-
-// const OptionsList = () => {
-//   return (
-//     <div className="options-list">
-//       <ul>
-//         <li>first option</li>
-//         <li>second option</li>
-//         <li>third option</li>
-//         <li>fours option</li>
-//         <li>fifth option</li>
-//         <li>sixth option</li>
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default OptionsList;

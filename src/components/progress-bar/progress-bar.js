@@ -1,24 +1,48 @@
 import React from 'react';
-import birdsData from '../../bird-data';
+import { Box, Paper, makeStyles }  from '@material-ui/core';
+import clsx from 'clsx';
+// import './progress-bar.css';
 
-import { Box,Paper }  from '@material-ui/core';
+const useStyles = makeStyles((theme) => ({
+  progressBar: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  item: {
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: 'auto',
+    padding: '.5rem .75rem',
+    textAlign: 'center',
+  },
+  itemActive: {
+    color: '#3f51b5',
+  }
+}));
 
+const ProgressBar = ({ level, data }) => {
+  const classes = useStyles();
 
-import './progress-bar.css';
-
-const ProgressBar = () => {
-  const data = birdsData;
-
-  const barItems = data.map((item) => {
+  const barItems = data.map((item, idx) => {
     const { id, category } = item;
 
     return (
-      <Box key={id} className='item'> { category } </Box>
+      <Box 
+        key={id} 
+        className={
+          clsx(
+            classes.item, 
+            { [classes.itemActive]: idx === level }
+          )}> 
+        {category} 
+      </Box>  
     );
   });
 
   return (
-    <Paper className='progress-bar'>
+    <Paper className={classes.progressBar}>
       { barItems }
     </Paper>
   );

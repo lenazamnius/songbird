@@ -1,5 +1,4 @@
 import React from 'react';
-import birdsData from '../../bird-data';
 import { Grid, Paper, Typography, Box, Divider }  from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -16,42 +15,42 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   image: {
-    width: 200,
+    width: '200px',
     height: 'auto',
   },
   img: {
     margin: 'auto',
     display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
+    width: '200px',
+    height: '155px',
+    objectFit: 'cover',
     borderRadius: '5px',
   },
 }));
 
 
-const QueryItem = () => {
+const QueryItem = ({ curLevelQueryItemObj }) => {
   const classes = useStyles();
-  const item = birdsData[2].data[0];
 
   return (
     <Paper className={classes.paper}>
       <Grid container spacing={2}>
         <Grid item>
           <Box className={classes.image}>
-            <img className={classes.img} alt="complex" src={item.image} />
+            <img className={classes.img} alt="complex" src={curLevelQueryItemObj.image} />
           </Box>
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
               <Typography gutterBottom variant="subtitle1">
-                {item.name}
+                {curLevelQueryItemObj.name}
               </Typography>
               <Divider />
               <figure className='player-wrapper'>
                 <audio className='player'
                   controls
-                  src={ item.audio }> Your browser does not support the <code>audio</code> element.
+                  src={ curLevelQueryItemObj.audio }> Your browser does not support the <code>audio</code> element.
                 </audio>
               </figure>
             </Grid>

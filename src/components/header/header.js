@@ -4,7 +4,7 @@ import Score from './components/score';
 
 import './header.css';
 
-const Header = () => {
+const Header = ({ score }) => {
   return (
     <Box className="header">
       <Box>
@@ -12,7 +12,7 @@ const Header = () => {
           App Name
         </Typography>
       </Box>
-      <Score score={0} />
+      <Score score={score} />
     </Box>
   );
 };
