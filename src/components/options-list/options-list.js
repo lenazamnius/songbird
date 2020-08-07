@@ -24,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const OptionsList = ({ curLevelData, handleClickOptionsListItem }) => {
+const OptionsList = ({ optionsListArr, handleClickOptionsListItem }) => {
   const classes = useStyles();
 
-  const barItems = curLevelData.map((item, itemIndex) => {
+  const barItems = optionsListArr.map((item, itemIndex) => {
     const { id, name, clicked } = item;
 
     return (

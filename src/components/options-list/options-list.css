@@ -2,25 +2,5 @@
   padding: 15px 5px;
   text-align: left;
   border-bottom: 1px solid grey;
+  cursor: pointer;
 }
-
-/* .option-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-right: 15px;
-  margin-left: 10px;
-  border-radius: 5px;
-}
-
-.default {
-  background-color: #3f51b5;
-}
-
-.guessed {
-  background-color: #4caf50;
-}
-
-.not-guessed {
-  background-color: #dc004e;
-} */

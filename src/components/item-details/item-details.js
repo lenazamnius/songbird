@@ -1,14 +1,16 @@
 import React from 'react';
-import { Grid, Paper, Typography, Box, Divider }  from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Grid, Paper, Typography, Box, Divider, makeStyles }  from '@material-ui/core';
 
 import './item-details.css';
 
-
 const useStyles = makeStyles((theme) => ({
   paper: {
+    height: '100%',
     padding: theme.spacing(2),
     margin: 'auto',
+  },
+  wrapper: {
+    height: '100%',
   },
   image: {
     width: '200px',
@@ -31,7 +33,7 @@ const ItemDetails = ({ curItemDetailsObj }) => {
   if (typeof curItemDetailsObj === 'string' ) {
     return (
     <Paper className={classes.paper}>
-      <Box>
+      <Box className={classes.wrapper}>
        {curItemDetailsObj}
       </Box>
     </Paper>
@@ -39,7 +41,7 @@ const ItemDetails = ({ curItemDetailsObj }) => {
   } else {
     return (
       <Paper className={classes.paper}>
-        <Grid container spacing={2} className='wrapper'>
+        <Grid container spacing={2} className={classes.wrapper}>
           <Grid item>
             <Box className={classes.image}>
               <img className={classes.img} alt="complex" src={curItemDetailsObj.image} />

@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   itemActive: {
     color: '#3f51b5',
+    fontWeight: 'bold',
   }
 }));
 
