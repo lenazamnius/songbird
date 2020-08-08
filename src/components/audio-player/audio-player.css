@@ -1,0 +1,68 @@
+.rhap_container {
+  margin-top: 15px;
+  padding: 10px 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.rhap_play-pause-button {
+  width: 55px;
+  height: 55px;
+  font-size: 55px;
+  outline: none;
+}
+
+.rhap_main-controls-button {
+  color: #3f51b5;
+}
+
+.rhap_progress-container {
+  margin: -23px 0 0 calc(10px + 1%);
+}
+
+.rhap_progress-indicator {
+  background-color: #3f51b5;
+}
+
+.rhap_progress-filled {
+  background-color: #3f51b580;
+}
+
+.rhap_volume-container {
+  flex: 0 1 120px;
+  padding-right: 30px;
+}
+
+.rhap_volume-button {
+  color: #3f51b5;
+}
+
+.rhap_volume-indicator {
+  background: #3f51b5;
+}
+
+.rhap_stacked .rhap_controls-section {
+  margin-top: -28px;
+  padding-left: 80px;
+}
+
+@media only screen and (max-width: 650px) {
+
+  .rhap_volume-container {
+    flex: 0 1 110px;
+    padding-right: 15px;
+  }
+
+  .rhap_progress-container {
+    margin: -23px 0 0 calc(5px + 1%);
+  }
+
+  .rhap_stacked .rhap_controls-section {
+    margin-top: -25px;
+    padding-left: 70px;
+  }
+
+  .rhap_time {
+    font-size: 14px;
+  }
+}

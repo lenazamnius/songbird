@@ -5,6 +5,16 @@
 //   console.log(content.recordings);
 // }
 
+// async function getBirdImg() {
+//   const url = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e85226ff1f16a2f9bcbcf32ced341298&tag_mode=all&extras=url_m&format=json&nojsoncallback&tags=circus+cyaneus';
+//   const response = await fetch(url);
+//   const images = await response.json();
+
+//   console.log(images.photos);
+// }
+
+// getBirdImg();
+
 // getData();
 
   // plugins: ['react'],
@@ -17,8 +27,6 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// import birdsData from './bird-data';
 import App from './components/app';
 
 ReactDOM.render(<App />,

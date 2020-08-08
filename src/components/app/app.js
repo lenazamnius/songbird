@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { CssBaseline, Container, Box, Grid } from '@material-ui/core';
 
 import Header from '../header';
@@ -15,7 +15,7 @@ import { getCurScore, createLevelData } from '../../helpers';
 import birdsData from '../../assets/bird-data';
 import './app.css';
 
-export default class App extends Component {
+export default class App extends PureComponent {
 
   state = {
     curLevelData: [],

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Grid, Paper, Typography, Box, Divider }  from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Grid, Paper, Typography, Box, Divider, makeStyles }  from '@material-ui/core';
+import Player from '../audio-player';
 import defaultImg from '../../assets/images/default-img.jpg';
-// import wronSound from '../../assets/images/default-img.png';
 
 import './query-item.css';
 
@@ -19,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
   image: {
     width: '200px',
     height: 'auto',
-    marginRight: '20px',
   },
   img: {
     margin: 'auto',
@@ -53,12 +51,7 @@ const QueryItem = ({ guessed, curLevelQueryItemObj }) => {
                 {itemName}
               </Typography>
               <Divider />
-              <figure className='player-wrapper'>
-                <audio className='player'
-                  controls
-                  src={ curLevelQueryItemObj.audio }> Your browser does not support the <code>audio</code> element.
-                </audio>
-              </figure>
+              <Player url={curLevelQueryItemObj.audio} />
             </Grid>
           </Grid>
         </Grid>

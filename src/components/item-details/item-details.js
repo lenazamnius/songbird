@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Paper, Typography, Box, Divider, makeStyles }  from '@material-ui/core';
-
+import Player from '../audio-player';
 import './item-details.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -58,12 +58,13 @@ const ItemDetails = ({ curItemDetailsObj }) => {
                   {curItemDetailsObj.species}
                 </Typography>
                 <Divider />
-                <figure className='player-wrapper'>
+                <Player url={curItemDetailsObj.audio} />
+                {/* <figure className='player-wrapper'>
                   <audio className='player'
                     controls
                     src={ curItemDetailsObj.audio }> Your browser does not support the <code>audio</code> element.
                   </audio>
-                </figure>
+                </figure> */}
               </Grid>
             </Grid>
           </Grid>
